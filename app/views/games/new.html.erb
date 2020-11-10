@@ -1,0 +1,18 @@
+
+<div class="d-flex justify-content-center">
+  <H1 class="align-self-center">GAAAAAME ON GRINGO</H1><br>
+</div>
+<div class="d-flex justify-content-center">
+  <ol class="list-inline">
+   <% @random.each do |letter| %>
+   <ul type="button" class="list-inline-item btn btn-primary"> <%= letter %> </ul>
+   <% end %>
+  </ol><br>
+</div>
+<div class="d-flex justify-content-center">
+  <form action="/score" method="post">
+    <input style="width: 400px;" type="text" name="word" placeholder="what is the longest word that you can find?">
+    <input type="submit" value="Play!">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  </form>
+</div>
